@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "645326891078",
+    "project_id": "discountme-be358",
+    "storage_bucket": "discountme-be358.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645326891078:android:beb5182edeef119c478247",
+        "android_client_info": {
+          "package_name": "com.example.discountme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645326891078-ner1d4jd4dgkkg60j542ijtqkmnssq9v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmvPB7u0hFU0WiTL3Qelmc3yA-FYq1Ns8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645326891078-ner1d4jd4dgkkg60j542ijtqkmnssq9v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
