@@ -1,4 +1,4 @@
-package com.example.discountme.Model;
+package com.example.discountme;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,7 @@ import android.widget.Button;
 import com.example.discountme.R;
 import com.example.discountme.Auth.LoginActivity;
 import com.example.discountme.Auth.SignUpActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
         signUp = findViewById(R.id.main_signup_btn);
         login = findViewById(R.id.main_login_btn);
 
-//        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
 //            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-//        }
+        }
 
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override

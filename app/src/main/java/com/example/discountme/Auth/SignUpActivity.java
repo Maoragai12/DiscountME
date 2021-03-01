@@ -17,6 +17,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.discountme.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 
 public class SignUpActivity extends AppCompatActivity {
@@ -26,13 +31,13 @@ public class SignUpActivity extends AppCompatActivity {
     EditText password_et;
     RadioGroup radioGroup;
     RadioButton radioButton;
-//    FirebaseAuth auth;
+    FirebaseAuth auth;
     Button signUpBtn;
     Button movetologinBtn;
     ProgressBar progressBar;
-//    FirebaseFirestore firebaseFirestore;
+    FirebaseFirestore firebaseFirestore;
     String userId;
-//    User user;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +52,7 @@ public class SignUpActivity extends AppCompatActivity {
         signUpBtn = findViewById(R.id.signup_signup_btn);
         movetologinBtn = findViewById(R.id.signup_alreadymember_tv);
 
-//        auth = FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
 
 //        progressBar = findViewById(R.id.signup_progressBar);
 
@@ -58,10 +63,10 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-//        if (auth.getCurrentUser() != null) {
+        if (auth.getCurrentUser() != null) {
 //            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-//            finish();
-//        }
+            finish();
+        }
 
 
         signUpBtn.setOnClickListener(new View.OnClickListener() {
@@ -72,61 +77,72 @@ public class SignUpActivity extends AppCompatActivity {
                 final String email = email_et.getText().toString().trim();
                 String password = password_et.getText().toString().trim();
                 final String name = name_et.getText().toString().trim();
-                int selectedId = radioGroup.getCheckedRadioButtonId();
-                radioButton = (RadioButton) findViewById(selectedId);
+//                int selectedId = radioGroup.getCheckedRadioButtonId();
+//                radioButton = (RadioButton) findViewById(selectedId);
+//                String radioValue = (String) radioButton.getText().toString();
 
 
                 if (TextUtils.isEmpty(email)) {
-                    email_et.setError("Email is required.");
+                    email_et.setError("Email is required!");
                     return;
                 }
 
                 if (TextUtils.isEmpty(password)) {
-                    password_et.setError("Password is required.");
+                    password_et.setError("Password is required!");
                     return;
                 }
 
                 if (password.length() < 6) {
-                    password_et.setError("Password must be up to 6 characters.");
+                    password_et.setError("Password must be up to 6 characters!");
                     return;
                 }
 
                 if (TextUtils.isEmpty(name)) {
-                    name_et.setError("Enter your name.");
+                    name_et.setError("Enter your name!");
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
+                Log.d("TAG", "NEW USER SAVED!" + name + password + email);
+
+
+//                if (TextUtils.isEmpty(radioValue)) {
+//                    radioButton.setError("Choose area of interest!");
+//                    return;
+//                }
+
+//                progressBar.setVisibility(View.VISIBLE);
 
                 // Add the user to firebase
 
-//                auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (task.isSuccessful()) {
-//                            Log.d("TAG", "user is created successful");
-//                            Toast.makeText(SignUpActivity.this, "User Created" , Toast.LENGTH_SHORT).show();
-//
-//                            userId = auth.getCurrentUser().getUid();
-//
-//                            user = new User(userId,name,email);
-//                            // storage the user in firestore
-//                            AuthFirebase.addUser(user, new UserModel.Listener<Boolean>() {
-//                                @Override
-//                                public void onComplete(Boolean data) {
-//                                    Log.d("TAG", "save new jewelry success");
-//                                }
-//                            });
-//
+                auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Log.d("TAG", "user is created successful");
+                            Toast.makeText(SignUpActivity.this, "User Created" , Toast.LENGTH_SHORT).show();
+
+                            userId = auth.getCurrentUser().getUid();
+
+                            user = new User(userId,name,email,password, "Clothes");
+
+                            Log.d("TAG", "NEW USER SAVED!" + user);
+                            // storage the user in firestore
+                            AuthFirebase.addUser(user, new UserModel.Listener<Boolean>() {
+                                @Override
+                                public void onComplete(Boolean data) {
+                                    Log.d("TAG", "NEW USER SAVED!");
+                                }
+                            });
+
 //                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-//                        } else {
-//                            Log.d("TAG", "user is create failed");
-//                            Toast.makeText(SignUpActivity.this, "Error - User create failed! " +task.getException().getMessage() , Toast.LENGTH_SHORT).show();
+                        } else {
+                            Log.d("TAG", "user is create failed");
+                            Toast.makeText(SignUpActivity.this, "Error - User create failed! " +task.getException().getMessage() , Toast.LENGTH_SHORT).show();
 //                            progressBar.setVisibility(View.GONE);
-//
-//                        }
-//                    }
-//                });
+
+                        }
+                    }
+                });
 
             }
         });
