@@ -14,14 +14,17 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.discountme.R;
-
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText email_et;
     EditText password_et;
-//    FirebaseAuth auth;
+    FirebaseAuth auth;
     Button loginBtn;
     Button movetosignupBtn;
     ProgressBar progressBar;
@@ -37,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         movetosignupBtn = findViewById(R.id.login_notmember_tv);
         loginBtn = findViewById(R.id.login_login_btn);
 
-//        auth = FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
 
 //        progressBar = findViewById(R.id.login_progressBar);
 
@@ -53,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email = email_et.getText().toString().trim();
                 String password = password_et.getText().toString().trim();
+                Log.d("TAG", "DATA:" + email + password);
 
                 if (TextUtils.isEmpty(email)) {
                     email_et.setError("Email is required.");
@@ -69,24 +73,23 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
+//                progressBar.setVisibility(View.VISIBLE);
 
                 // auth the user
-
-//                auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (task.isSuccessful()) {
-//                            Log.d("TAG", "user is login successful");
-//                            Toast.makeText(LoginActivity.this, "User logged in" , Toast.LENGTH_SHORT).show();
+                auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Log.d("TAG", "user is login successful");
+                            Toast.makeText(LoginActivity.this, "User logged in" , Toast.LENGTH_SHORT).show();
 //                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-//                        } else {
-//                            Log.d("TAG", "user login failed");
-//                            Toast.makeText(LoginActivity.this, "Error - User login failed! " +task.getException().getMessage() , Toast.LENGTH_SHORT).show();
+                        } else {
+                            Log.d("TAG", "user login failed");
+                            Toast.makeText(LoginActivity.this, "Error - User login failed! " +task.getException().getMessage() , Toast.LENGTH_SHORT).show();
 //                            progressBar.setVisibility(View.GONE);
-//                        }
-//                    }
-//                });
+                        }
+                    }
+                });
 
             }
         });

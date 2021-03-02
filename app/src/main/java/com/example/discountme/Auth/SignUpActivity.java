@@ -32,6 +32,7 @@ public class SignUpActivity extends AppCompatActivity {
     RadioGroup radioGroup;
     RadioButton radioButton;
     FirebaseAuth auth;
+    AuthFirebase au;
     Button signUpBtn;
     Button movetologinBtn;
     ProgressBar progressBar;
@@ -63,10 +64,10 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-        if (auth.getCurrentUser() != null) {
+//        if (auth.getCurrentUser() != null) {
 //            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-            finish();
-        }
+//            finish();
+//        }
 
 
         signUpBtn.setOnClickListener(new View.OnClickListener() {
@@ -101,8 +102,6 @@ public class SignUpActivity extends AppCompatActivity {
                     name_et.setError("Enter your name!");
                     return;
                 }
-
-                Log.d("TAG", "NEW USER SAVED!" + name + password + email);
 
 
 //                if (TextUtils.isEmpty(radioValue)) {

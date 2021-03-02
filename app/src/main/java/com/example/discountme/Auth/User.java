@@ -10,21 +10,21 @@ import java.io.Serializable;
 public class User implements Serializable {
     @PrimaryKey
     @NonNull
-    public String  uid;
+    public String uid;
     public String name;
     public String email;
     public String password;
-    public String AIO;
+    public String aio;
 
 
     public User() {}
 
-    public User (@NonNull String uid, String name, String email, String password, String AIO) {
+    public User (@NonNull String uid, String name, String email, String password, String aio) {
         this.uid = uid;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.AIO = AIO;
+        this.aio = aio;
     }
 
 
@@ -61,11 +61,9 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getAIO() {
-        return AIO;
-    }
+    public String getAIO() { return aio; }
 
-    public void setAIO(String AIO) {
-        this.AIO = AIO;
+    public void setAIO(String aio) {
+        this.aio = aio;
     }
 }

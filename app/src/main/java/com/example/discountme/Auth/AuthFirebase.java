@@ -48,7 +48,7 @@ public class AuthFirebase
                     if (document.exists()) {
                         Log.d("TAG", "User Data: " + document.getData());
                         user = document.getData();
-                        u = new User(user.get("uid").toString(), user.get("name").toString(), user.get("email").toString(), user.get("password").toString(), user.get("AIO").toString());
+                        u = new User(user.get("uid").toString(), user.get("name").toString(), user.get("email").toString(), user.get("password").toString(), user.get("aio").toString());
                     } else {
                         Log.d("TAG", "User not exists");
                     }
