@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
-//        progressBar = findViewById(R.id.login_progressBar);
+        progressBar = findViewById(R.id.login_progressBar);
 
         movetosignupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
-//                progressBar.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.VISIBLE);
 
                 // auth the user
                 auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                         } else {
                             Log.d("TAG", "user login failed");
                             Toast.makeText(LoginActivity.this, "Error - User login failed! " +task.getException().getMessage() , Toast.LENGTH_SHORT).show();
-//                            progressBar.setVisibility(View.GONE);
+                            progressBar.setVisibility(View.GONE);
                         }
                     }
                 });

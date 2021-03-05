@@ -55,7 +55,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
-//        progressBar = findViewById(R.id.signup_progressBar);
+        progressBar = findViewById(R.id.signup_progressBar);
 
         movetologinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,7 +109,7 @@ public class SignUpActivity extends AppCompatActivity {
 //                    return;
 //                }
 
-//                progressBar.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.VISIBLE);
 
                 // Add the user to firebase
 
@@ -132,12 +132,12 @@ public class SignUpActivity extends AppCompatActivity {
                                     Log.d("TAG", "NEW USER SAVED!");
                                 }
                             });
-
+                            progressBar.setVisibility(View.GONE);
 //                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                         } else {
                             Log.d("TAG", "user is create failed");
                             Toast.makeText(SignUpActivity.this, "Error - User create failed! " +task.getException().getMessage() , Toast.LENGTH_SHORT).show();
-//                            progressBar.setVisibility(View.GONE);
+                            progressBar.setVisibility(View.GONE);
 
                         }
                     }
