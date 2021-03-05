@@ -78,9 +78,9 @@ public class SignUpActivity extends AppCompatActivity {
                 final String email = email_et.getText().toString().trim();
                 String password = password_et.getText().toString().trim();
                 final String name = name_et.getText().toString().trim();
-//                int selectedId = radioGroup.getCheckedRadioButtonId();
-//                radioButton = (RadioButton) findViewById(selectedId);
-//                String radioValue = (String) radioButton.getText().toString();
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+                radioButton = (RadioButton) findViewById(selectedId);
+                String radioValue = (String) radioButton.getText().toString();
 
 
                 if (TextUtils.isEmpty(email)) {
@@ -104,10 +104,10 @@ public class SignUpActivity extends AppCompatActivity {
                 }
 
 
-//                if (TextUtils.isEmpty(radioValue)) {
-//                    radioButton.setError("Choose area of interest!");
-//                    return;
-//                }
+                if (TextUtils.isEmpty(radioValue)) {
+                    radioButton.setError("Choose area of interest!");
+                    return;
+                }
 
                 progressBar.setVisibility(View.VISIBLE);
 
@@ -122,7 +122,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                             userId = auth.getCurrentUser().getUid();
 
-                            user = new User(userId,name,email,password, "Clothes");
+                            user = new User(userId,name,email,password,radioValue);
 
                             Log.d("TAG", "NEW USER SAVED!" + user);
                             // storage the user in firestore
