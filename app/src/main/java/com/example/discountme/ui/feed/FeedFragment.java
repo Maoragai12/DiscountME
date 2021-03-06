@@ -1,7 +1,6 @@
-package com.example.discountme.ui.gallery;
+package com.example.discountme.ui.feed;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,20 +14,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.discountme.R;
 
-public class GalleryFragment extends Fragment {
+public class FeedFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private FeedViewModel feedViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
-        Log.d("TAG", "home");
-
-        galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_profile, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        feedViewModel =
+                new ViewModelProvider(this).get(FeedViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_feed, container, false);
+        final TextView textView = root.findViewById(R.id.text_home);
+        feedViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
