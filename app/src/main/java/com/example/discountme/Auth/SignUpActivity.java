@@ -16,6 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.discountme.HomeActivity;
 import com.example.discountme.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -55,7 +56,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
-//        progressBar = findViewById(R.id.signup_progressBar);
+        progressBar = findViewById(R.id.signup_progressBar);
 
         movetologinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,10 +65,10 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-//        if (auth.getCurrentUser() != null) {
+        if (auth.getCurrentUser() != null) {
 //            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
 //            finish();
-//        }
+        }
 
 
         signUpBtn.setOnClickListener(new View.OnClickListener() {
@@ -78,9 +79,9 @@ public class SignUpActivity extends AppCompatActivity {
                 final String email = email_et.getText().toString().trim();
                 String password = password_et.getText().toString().trim();
                 final String name = name_et.getText().toString().trim();
-//                int selectedId = radioGroup.getCheckedRadioButtonId();
-//                radioButton = (RadioButton) findViewById(selectedId);
-//                String radioValue = (String) radioButton.getText().toString();
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+                radioButton = (RadioButton) findViewById(selectedId);
+                String radioValue = (String) radioButton.getText().toString();
 
 
                 if (TextUtils.isEmpty(email)) {
@@ -104,12 +105,12 @@ public class SignUpActivity extends AppCompatActivity {
                 }
 
 
-//                if (TextUtils.isEmpty(radioValue)) {
-//                    radioButton.setError("Choose area of interest!");
-//                    return;
-//                }
+                if (TextUtils.isEmpty(radioValue)) {
+                    radioButton.setError("Choose area of interest!");
+                    return;
+                }
 
-//                progressBar.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.VISIBLE);
 
                 // Add the user to firebase
 
@@ -122,7 +123,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                             userId = auth.getCurrentUser().getUid();
 
-                            user = new User(userId,name,email,password, "Clothes");
+                            user = new User(userId,name,email,password,radioValue);
 
                             Log.d("TAG", "NEW USER SAVED!" + user);
                             // storage the user in firestore
@@ -132,12 +133,12 @@ public class SignUpActivity extends AppCompatActivity {
                                     Log.d("TAG", "NEW USER SAVED!");
                                 }
                             });
-
-//                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                            progressBar.setVisibility(View.GONE);
+                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                         } else {
                             Log.d("TAG", "user is create failed");
                             Toast.makeText(SignUpActivity.this, "Error - User create failed! " +task.getException().getMessage() , Toast.LENGTH_SHORT).show();
-//                            progressBar.setVisibility(View.GONE);
+                            progressBar.setVisibility(View.GONE);
 
                         }
                     }
