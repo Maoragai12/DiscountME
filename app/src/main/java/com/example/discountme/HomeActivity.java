@@ -7,23 +7,16 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
 
-import android.graphics.Path;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toolbar;
 
-import com.example.discountme.ui.gallery.GalleryFragment;
-import com.example.discountme.ui.home.HomeFragment;
-import com.example.discountme.ui.slideshow.SlideshowFragment;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.discountme.ui.profile.ProfileFragment;
+import com.example.discountme.ui.feed.FeedFragment;
+import com.example.discountme.ui.settings.SlideshowFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity {
@@ -73,16 +66,16 @@ public class HomeActivity extends AppCompatActivity {
         Class fragmentClass;
         switch(menuItem.getItemId()) {
             case R.id.nav_home:
-                fragmentClass = HomeFragment.class;
+                fragmentClass = FeedFragment.class;
                 break;
             case R.id.nav_profile:
-                fragmentClass = GalleryFragment.class;
+                fragmentClass = ProfileFragment.class;
                 break;
             case R.id.nav_settings:
                 fragmentClass = SlideshowFragment.class;
                 break;
             default:
-                fragmentClass = HomeFragment.class;
+                fragmentClass = FeedFragment.class;
         }
 
         try {

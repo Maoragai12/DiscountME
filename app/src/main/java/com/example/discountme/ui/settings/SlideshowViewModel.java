@@ -1,4 +1,4 @@
-package com.example.discountme.ui.slideshow;
+package com.example.discountme.ui.settings;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
