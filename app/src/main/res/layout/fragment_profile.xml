@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.gallery.GalleryFragment">
 
+
     <TextView
         android:id="@+id/full_name_profile"
         android:layout_width="wrap_content"
@@ -25,13 +26,14 @@
         android:id="@+id/fullname_profile_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="208dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.59"
         app:layout_constraintStart_toEndOf="@+id/full_name_profile"
-        app:layout_constraintTop_toBottomOf="@+id/photo_profile_text" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/email_profile_text"
@@ -40,10 +42,12 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/radio"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.642"
+        app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toEndOf="@+id/email_profile"
-        app:layout_constraintTop_toBottomOf="@+id/fullname_profile_text" />
+        app:layout_constraintTop_toBottomOf="@+id/fullname_profile_text"
+        app:layout_constraintVertical_bias="0.348" />
 
     <TextView
         android:id="@+id/email_profile"
@@ -130,6 +134,16 @@
         android:layout_marginBottom="8dp"
         android:clickable="true"
         android:src="@android:drawable/ic_menu_edit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio" />
+
+    <TextView
+        android:id="@+id/text_gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
