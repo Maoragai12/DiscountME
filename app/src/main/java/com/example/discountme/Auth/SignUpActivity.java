@@ -16,6 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.discountme.HomeActivity;
 import com.example.discountme.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -64,10 +65,10 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-//        if (auth.getCurrentUser() != null) {
+        if (auth.getCurrentUser() != null) {
 //            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
 //            finish();
-//        }
+        }
 
 
         signUpBtn.setOnClickListener(new View.OnClickListener() {
@@ -133,7 +134,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 }
                             });
                             progressBar.setVisibility(View.GONE);
-//                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                         } else {
                             Log.d("TAG", "user is create failed");
                             Toast.makeText(SignUpActivity.this, "Error - User create failed! " +task.getException().getMessage() , Toast.LENGTH_SHORT).show();

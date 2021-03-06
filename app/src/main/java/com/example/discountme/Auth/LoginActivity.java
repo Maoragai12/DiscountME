@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.discountme.HomeActivity;
 import com.example.discountme.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -82,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Log.d("TAG", "user is login successful");
                             Toast.makeText(LoginActivity.this, "User logged in" , Toast.LENGTH_SHORT).show();
-//                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                         } else {
                             Log.d("TAG", "user login failed");
                             Toast.makeText(LoginActivity.this, "Error - User login failed! " +task.getException().getMessage() , Toast.LENGTH_SHORT).show();

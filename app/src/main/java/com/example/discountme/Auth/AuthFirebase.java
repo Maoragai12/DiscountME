@@ -35,6 +35,18 @@ public class AuthFirebase
         });
     }
 
+    public static void updateUser(User user , final UserModel.Listener<Boolean> listener) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection(USERS_COLLECTION).document(user.getUid()).set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (listener!=null){
+                    listener.onComplete(task.isSuccessful());
+                }
+            }
+        });
+    }
+
     public static void getUserFromFirebase() {
         userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();

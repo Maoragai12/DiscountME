@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".Auth.LoginActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".Auth.SignUpActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".HomeActivity"></activity>
     </application>
 
 </manifest>
