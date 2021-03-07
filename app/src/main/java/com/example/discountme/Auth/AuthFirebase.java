@@ -12,6 +12,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class AuthFirebase
@@ -35,29 +36,26 @@ public class AuthFirebase
         });
     }
 
-    public static void updateUser(User user , final UserModel.Listener<Boolean> listener) {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection(USERS_COLLECTION).document(user.getUid()).set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (listener!=null){
-                    listener.onComplete(task.isSuccessful());
-                }
-            }
-        });
-    }
+    public static void updateUser(User user, final UserModel.Listener<Boolean> listener) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("name", user.name);
+        map.put("email", user.email);
+        map.put("password", user.password);
 
-//    public static void getUser(User user , final UserModel.Listener<Boolean> listener) {
-//        FirebaseFirestore db = FirebaseFirestore.getInstance();
-//        db.collection(USERS_COLLECTION).document(user.getUid()).set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-//            @Override
-//            public void onComplete(@NonNull Task<Void> task) {
-//                if (listener!=null){
-//                    listener.onComplete(task.isSuccessful());
-//                }
-//            }
-//        });
-//    }
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference documentReference = db.collection(USERS_COLLECTION).document(user.getUid());
+        documentReference.update(map)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (listener!=null){
+                            Log.d("TAG", "DocumentSnapshot successfully update!");
+                            listener.onComplete(task.isSuccessful());
+                        }
+                    }
+                });
+    }
 
     public static User getUserFromFirebase() {
         userId = FirebaseAuth.getInstance().getCurrentUser().getUid();

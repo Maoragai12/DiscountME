@@ -13,7 +13,7 @@ public class UserViewModel extends ViewModel {
     }
 
     public void update(User user, UserModel.Listener listener) {
-        AuthFirebase.updateUser(user, listener);
+        UserModel.instance.updateUser(user, listener);
     }
 
 }
