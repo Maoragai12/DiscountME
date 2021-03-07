@@ -65,11 +65,6 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-        if (auth.getCurrentUser() != null) {
-//            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-//            finish();
-        }
-
 
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
