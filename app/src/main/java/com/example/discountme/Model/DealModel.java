@@ -52,6 +52,7 @@ public class DealModel {
         });
     }
 
+
     @SuppressLint("StaticFieldLeak")
     public void addDeal(final Deal deal, Listener<Boolean> listener) {
         new AsyncTask<String,String,String>(){

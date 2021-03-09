@@ -8,6 +8,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -26,6 +27,27 @@ public class DealFirebase {
     public static void getAllDeals(final DealModel.Listener<List<Deal>> listener) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection(DEAL_COLLECTION).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                List<Deal> dealList = null;
+                if (task.isSuccessful()){
+                    dealList = new LinkedList<Deal>();
+                    for(QueryDocumentSnapshot doc : task.getResult()){
+                        Deal deal = doc.toObject(Deal.class);
+                        if (!deal.isDeleted()) {
+                            dealList.add(deal);
+                        }
+                    }
+                }
+                listener.onComplete(dealList);
+            }
+        });
+    }
+
+    public static void getUsersDeals(final DealModel.Listener<List<Deal>> listener) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        db.collection(DEAL_COLLECTION).whereEqualTo("userId", userId).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 List<Deal> dealList = null;
