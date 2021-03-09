@@ -8,6 +8,7 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_feed">Feed</string>
+    <string name="menu_my_deals">My Deals</string>
     <string name="menu_profile">Profile</string>
     <string name="menu_settings">Settings</string>
 </resources>

@@ -13,40 +13,40 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Entity
-public class Discount implements Serializable {
+public class Deal implements Serializable {
     @PrimaryKey
     @NonNull
     public String  id;
-    public String name;
-    public String type; // silver , gold , rose gold
+    public String title;
+    public String description;
+    public String type;
     public String cost;
-    public Boolean isSold; // true is sold and false if not
     public String imageUrl;
     public String userId;
     public boolean deleted;
-//    double lastUpdated;
 
-    public Discount() {
+
+    public Deal() {
 
     }
 
-    public Discount(String id, String name, String type, String cost, Boolean isSold, String imageUrl) {
+    public Deal(String id, String title, String description, String type, String cost, String imageUrl) {
         this.id = id;
-        this.name = name;
+        this.title = title;
+        this.description = description;
         this.type = type;
         this.cost = cost;
-        this.isSold = isSold;
         this.imageUrl = imageUrl;
         this.userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         this.deleted = false;
     }
 
-    public Discount(String id, String name, String type, String cost, Boolean isSold, String imageUrl, Boolean deleted) {
+    public Deal(String id, String title, String type, String description, String cost, String imageUrl, Boolean deleted) {
         this.id = id;
-        this.name = name;
+        this.title = title;
+        this.description = description;
         this.type = type;
         this.cost = cost;
-        this.isSold = isSold;
         this.imageUrl = imageUrl;
         this.userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         this.deleted = deleted;
@@ -68,18 +68,6 @@ public class Discount implements Serializable {
         this.deleted = deleted;
     }
 
-    //    public Map<String, Object> toMap() {
-//        HashMap<String, Object> result = new HashMap<>();
-//        result.put("id", id);
-//        result.put("name", name);
-//        result.put("type", type);
-//        result.put("cost", cost);
-//        result.put("isSold", isSold);
-//        result.put("imageUrl", imageUrl);
-//        result.put("lastUpdated", FieldValue.serverTimestamp());
-//        return result;
-//    }
-
     @NonNull
     public String getId() {
         return id;
@@ -89,12 +77,20 @@ public class Discount implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getType() {
@@ -111,14 +107,6 @@ public class Discount implements Serializable {
 
     public void setCost(String cost) {
         this.cost = cost;
-    }
-
-    public Boolean getSold() {
-        return isSold;
-    }
-
-    public void setSold(Boolean sold) {
-        isSold = sold;
     }
 
     public String getImageUrl() {

@@ -7,22 +7,20 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.OnConflictStrategy;
 
-import com.example.discountme.Model.Discount;
-
 import java.util.List;
 
 @Dao
-public interface DiscountDao {
-    @Query("select * from Discount")
-    LiveData<List<Discount>> getAll();
+public interface DealDao {
+    @Query("select * from Deal")
+    LiveData<List<Deal>> getAll();
 
-    @Query("select * from Discount")
-    List<Discount> getAllList();
+    @Query("select * from Deal")
+    List<Deal> getAllList();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertAll(Discount... discounts);
+    void insertAll(Deal... deals);
 
     @Delete
-    void deleteJewelry(Discount... discounts);
+    void deleteDeal(Deal... deals);
 
 }

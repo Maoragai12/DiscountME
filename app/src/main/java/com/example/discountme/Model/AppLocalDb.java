@@ -6,9 +6,9 @@ import androidx.room.RoomDatabase;
 import com.example.discountme.MyApplication;
 
 
-@Database(entities = {Discount.class}, version = 1)
+@Database(entities = {Deal.class}, version = 1)
 abstract class AppLocalDbRepository extends RoomDatabase {
-    public abstract DiscountDao discountDao();
+    public abstract DealDao dealDao();
 }
 
 public class AppLocalDb {
