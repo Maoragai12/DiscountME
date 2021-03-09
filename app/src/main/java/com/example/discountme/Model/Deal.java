@@ -26,9 +26,7 @@ public class Deal implements Serializable {
     public boolean deleted;
 
 
-    public Deal() {
-
-    }
+    public Deal() {}
 
     public Deal(String id, String title, String description, String type, String cost, String imageUrl) {
         this.id = id;
