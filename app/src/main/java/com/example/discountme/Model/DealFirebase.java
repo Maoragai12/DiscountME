@@ -24,6 +24,7 @@ public class DealFirebase {
 
     List<Deal> deals;
 
+
     public static void getAllDeals(final DealModel.Listener<List<Deal>> listener) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection(DEAL_COLLECTION).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

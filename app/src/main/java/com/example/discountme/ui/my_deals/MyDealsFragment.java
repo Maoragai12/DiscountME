@@ -15,6 +15,7 @@ import com.example.discountme.Model.Deal;
 import com.example.discountme.R;
 
 public class MyDealsFragment extends Fragment {
+
     private Deal deal;
     TextView dealName;
     TextView storeName;
@@ -24,8 +25,7 @@ public class MyDealsFragment extends Fragment {
 
     public MyDealsFragment(){}
 
-    @Nullable
-    @Override
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_deal, container, false);

@@ -1,5 +1,6 @@
 package com.example.discountme;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,22 +8,27 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toolbar;
 
+import com.example.discountme.ui.feed.newsFeedFragment;
+import com.example.discountme.ui.my_deals.MyDealsFragment;
 import com.example.discountme.ui.profile.ProfileFragment;
-import com.example.discountme.ui.feed.FeedFragment;
-import com.example.discountme.ui.settings.SlideshowFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
     private Toolbar toolbar;
     private NavigationView nvDrawer;
+    public RecyclerView postsList;
 
     // Make sure to be using androidx.appcompat.app.ActionBarDrawerToggle version.
     private ActionBarDrawerToggle drawerToggle;
@@ -44,7 +50,11 @@ public class HomeActivity extends AppCompatActivity {
         nvDrawer = (NavigationView) findViewById(R.id.nav_view);
         setupDrawerContent(nvDrawer);
 
+        postsList = findViewById(R.id.feed_recyclerview);
+        postsList.setHasFixedSize(true);
 
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        postsList.setLayoutManager(layoutManager);
 
 
     }
@@ -66,16 +76,15 @@ public class HomeActivity extends AppCompatActivity {
         Class fragmentClass;
         switch(menuItem.getItemId()) {
             case R.id.nav_home:
-                fragmentClass = FeedFragment.class;
+                fragmentClass = newsFeedFragment.class;
                 break;
             case R.id.nav_profile:
                 fragmentClass = ProfileFragment.class;
                 break;
-            case R.id.nav_settings:
-                fragmentClass = SlideshowFragment.class;
-                break;
+            case R.id.nav_my_deal:
+                fragmentClass = MyDealsFragment.class;
             default:
-                fragmentClass = FeedFragment.class;
+                fragmentClass = newsFeedFragment.class;
         }
 
         try {
@@ -122,5 +131,30 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreateOptionsMenu(menu);
 //         getMenuInflater().inflate(R.menu.main, menu);
         return true;
+    }
+
+    class MyViewHolder extends RecyclerView.ViewHolder{
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+        }
+    }
+
+
+    class MyAdapter extends RecyclerView.Adapter<MyViewHolder>{
+        @NonNull
+        @Override
+        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return null;
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return 0;
+        }
     }
 }

@@ -4,11 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.ServerTimestamp;
 
 import java.io.Serializable;
+import java.sql.Time;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,11 +26,13 @@ public class Deal implements Serializable {
     public String imageUrl;
     public String userId;
     public boolean deleted;
+//    private String dateUpdated;
 
+    public Deal() {
 
-    public Deal() {}
+    }
 
-    public Deal(String id, String title, String description, String type, String cost, String imageUrl) {
+    public Deal(String id, String title, String description, String type, String cost, String imageUrl, Timestamp timestamp) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -37,9 +41,10 @@ public class Deal implements Serializable {
         this.imageUrl = imageUrl;
         this.userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         this.deleted = false;
+//        this.dateUpdated = timestamp.toString();
     }
 
-    public Deal(String id, String title, String type, String description, String cost, String imageUrl, Boolean deleted) {
+    public Deal(String id, String title, String type, String description, String cost, String imageUrl, Boolean deleted, Timestamp timestamp) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -48,6 +53,7 @@ public class Deal implements Serializable {
         this.imageUrl = imageUrl;
         this.userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         this.deleted = deleted;
+//        this.dateUpdated = timestamp.toString();
     }
 
     public String getUserId() {
@@ -114,4 +120,12 @@ public class Deal implements Serializable {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+//    public String getLastUpdated() {
+//        return dateUpdated;
+//    }
+//
+//    public void setLastUpdated(String dateUpdated) {
+//        this.dateUpdated = dateUpdated;
+//    }
 }

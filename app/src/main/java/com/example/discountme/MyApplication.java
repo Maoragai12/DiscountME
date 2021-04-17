@@ -13,9 +13,4 @@ public class MyApplication extends Application {
         super.onCreate();
         context = getApplicationContext();
     }
-    @Override
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
-        MultiDex.install(this);
-    }
 }
