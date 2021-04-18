@@ -49,7 +49,7 @@ public class singlePostFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_deal, container, false);
 
-        SharedPreferences sp = MyApplication.context.getSharedPreferences("Users", Context.MODE_PRIVATE);
+/*        SharedPreferences sp = MyApplication.context.getSharedPreferences("Users", Context.MODE_PRIVATE);
         String currentUserID = sp.getString("currentUserID", "0");
         PB_singlePost = view.findViewById(R.id.PB_AddAPost);
         PB_singlePost.setVisibility(View.VISIBLE);
@@ -164,11 +164,11 @@ public class singlePostFragment extends Fragment {
                 Navigation.findNavController(view).popBackStack();
             }
 
-        });
+        });*/
 
 
 
-        postItemEdit.setOnClickListener(new View.OnClickListener() {
+/*        postItemEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 singlePostFragmentDirections.ActionSinglePostFragmentToEditItemFragment actionToEdit =
@@ -176,7 +176,7 @@ public class singlePostFragment extends Fragment {
                 Navigation.findNavController(v).navigate(actionToEdit);
 
             }
-        });
+        });*/
 
         return view;
     }
