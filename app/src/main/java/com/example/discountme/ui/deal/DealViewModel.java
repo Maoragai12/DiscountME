@@ -1,4 +1,4 @@
-package com.example.discountme;
+package com.example.discountme.ui.deal;
 
 import androidx.lifecycle.ViewModel;
 
