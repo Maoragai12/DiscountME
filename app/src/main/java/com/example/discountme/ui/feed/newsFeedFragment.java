@@ -22,7 +22,7 @@ import android.widget.ProgressBar;
 import com.example.discountme.Auth.User;
 import com.example.discountme.Model.Deal;
 import com.example.discountme.Model.DealModel;
-import com.example.discountme.PostsListViewModel;
+import com.example.discountme.dealsListViewModel;
 import com.example.discountme.R;
 import com.example.discountme.UserListViewModel;
 import com.example.discountme.MyApplication;
@@ -34,7 +34,7 @@ public class newsFeedFragment extends Fragment {
 
     RecyclerView postList;
     UserListViewModel userListViewModel;
-    PostsListViewModel postListViewModel;
+    dealsListViewModel postListViewModel;
     String currentUserID="0";
     ImageButton visitProfile;
     ImageButton mapMode;
@@ -47,11 +47,11 @@ public class newsFeedFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =inflater.inflate(R.layout.fragment_news_feed, container, false);
+        View view =inflater.inflate(R.layout.fragment_feed, container, false);
 
         DealModel.instance.refreshDealList(null);
 
-        postListViewModel=new ViewModelProvider(this).get(PostsListViewModel.class);
+        postListViewModel=new ViewModelProvider(this).get(dealsListViewModel.class);
         userListViewModel=new ViewModelProvider(this).get(UserListViewModel.class);
         SharedPreferences sp = MyApplication.context.getSharedPreferences("Users", Context.MODE_PRIVATE);
         currentUserID=sp.getString("currentUserID","0");
