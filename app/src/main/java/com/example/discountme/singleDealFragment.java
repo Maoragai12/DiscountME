@@ -29,7 +29,7 @@ import com.example.discountme.MyApplication;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class singlePostFragment extends Fragment {
+public class singleDealFragment extends Fragment {
 
     Button postUserName;
     TextView postDate;

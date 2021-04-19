@@ -30,7 +30,7 @@ import com.example.discountme.MyApplication;
 import java.util.List;
 
 
-public class newsFeedFragment extends Fragment {
+public class FeedFragment extends Fragment {
 
     RecyclerView postList;
     UserListViewModel userListViewModel;
