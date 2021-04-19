@@ -1,6 +1,7 @@
 package com.example.discountme.ui.profile;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,8 +46,6 @@ public class ProfileFragment extends Fragment {
         password = view.findViewById(R.id.password_text_profile);
         editBTN = (FloatingActionButton) view.findViewById(R.id.edit_profile_button);
         user = AuthFirebase.getUserFromFirebase();
-
-//        Log.d("TAG", "USER:" + user.getName());
 
         if(user != null) update_display();
 
