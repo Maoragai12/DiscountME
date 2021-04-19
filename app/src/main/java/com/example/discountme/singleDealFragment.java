@@ -1,3 +1,4 @@
+/*
 package com.example.discountme;
 
 import android.content.Context;
@@ -31,34 +32,34 @@ import java.util.Locale;
 
 public class singlePostFragment extends Fragment {
 
-    Button postUserName;
-    TextView postDate;
-    TextView postItemCity;
-    TextView postItemCondition;
-    TextView postItemDescription;
-    ImageView postUserImage;
-    ImageView postItemImage;
-    ImageButton postItemDelete;
-    ImageButton postItemEdit;
-    Button whatAppBtn;
-    Button VisitProfile;
-    String postPhotoID;
-    ProgressBar PB_singlePost;
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.fragment_deal, container, false);
-
-        SharedPreferences sp = MyApplication.context.getSharedPreferences("Users", Context.MODE_PRIVATE);
-        String currentUserID = sp.getString("currentUserID", "0");
-        PB_singlePost = view.findViewById(R.id.PB_AddAPost);
-        PB_singlePost.setVisibility(View.VISIBLE);
-        postUserImage=view.findViewById(R.id.single_post_user_img);
-        postUserName=view.findViewById(R.id.single_post_user_name);
-        postDate=view.findViewById(R.id.single_post_date);
-        postItemImage=view.findViewById(R.id.single_post_item_img);
-        postItemDescription=view.findViewById(R.id.single_post_item_description);
-        postItemCity=view.findViewById(R.id.single_post_item_city);
+//    Button postUserName;
+//    TextView postDate;
+//    TextView postItemCity;
+//    TextView postItemCondition;
+//    TextView postItemDescription;
+//    ImageView postUserImage;
+//    ImageView postItemImage;
+//    ImageButton postItemDelete;
+//    ImageButton postItemEdit;
+//    Button whatAppBtn;
+//    Button VisitProfile;
+//    String postPhotoID;
+//    ProgressBar PB_singlePost;
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//        View view= inflater.inflate(R.layout.fragment_deal, container, false);
+//
+//        SharedPreferences sp = MyApplication.context.getSharedPreferences("Users", Context.MODE_PRIVATE);
+//        String currentUserID = sp.getString("currentUserID", "0");
+//        PB_singlePost = view.findViewById(R.id.PB_AddAPost);
+//        PB_singlePost.setVisibility(View.VISIBLE);
+//        postUserImage=view.findViewById(R.id.single_post_user_img);
+//        postUserName=view.findViewById(R.id.single_post_user_name);
+//        postDate=view.findViewById(R.id.single_post_date);
+//        postItemImage=view.findViewById(R.id.single_post_item_img);
+//        postItemDescription=view.findViewById(R.id.single_post_item_description);
+//        postItemCity=view.findViewById(R.id.single_post_item_city);
         postItemCondition=view.findViewById(R.id.single_post_item_condotion);
         postItemDelete = view.findViewById(R.id.delete_single_Post_btn);
         postItemEdit = view.findViewById(R.id.edit_single_Post_btn);
@@ -180,4 +181,4 @@ public class singlePostFragment extends Fragment {
 
         return view;
     }
-}
+}*/

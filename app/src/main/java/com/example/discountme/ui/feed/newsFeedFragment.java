@@ -37,11 +37,9 @@ public class newsFeedFragment extends Fragment {
     dealsListViewModel postListViewModel;
     String currentUserID="0";
     ImageButton visitProfile;
-    ImageButton mapMode;
-    Button addAPostBtn;
     ProgressBar PB_newsFeed;
 
-
+/*
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -137,5 +135,5 @@ public class newsFeedFragment extends Fragment {
             }
         });
         return view;
-    }
+    }*/
 }
