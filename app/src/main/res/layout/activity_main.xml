@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Model.MainActivity">
+    tools:context=".view.activities.MainActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -28,8 +28,8 @@
 
     <Button
         android:id="@+id/main_login_btn"
-        android:layout_width="159dp"
-        android:layout_height="40dp"
+        android:layout_width="230dp"
+        android:layout_height="60dp"
         android:layout_marginTop="136dp"
         android:backgroundTint="#009688"
         android:fontFamily="sans-serif-thin"
@@ -42,8 +42,8 @@
 
     <Button
         android:id="@+id/main_signup_btn"
-        android:layout_width="159dp"
-        android:layout_height="40dp"
+        android:layout_width="230dp"
+        android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="#009688"
         android:fontFamily="sans-serif-thin"
