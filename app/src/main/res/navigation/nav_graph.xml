@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/feedFragment">
+
+    <action
+        android:id="@+id/show_details_action"
+        app:destination="@id/dealDetailsFragment">
+        <argument
+            android:name="deal"
+            app:argType="com.example.discountme.model.Deal" />
+    </action>
+
+    <action
+        android:id="@+id/edit_profile_action"
+        app:destination="@id/editProfileFragment">
+        <argument
+            android:name="user"
+            app:argType="com.example.discountme.model.User" />
+    </action>
+
+    <fragment
+        android:id="@+id/dealsListFragment"
+        android:name="com.example.discountme.view.fragments.DealsListFragment"
+        android:label="DealsListFragment" >
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/starredDealsFragment"
+        android:name="com.example.discountme.view.fragments.StarredDealsFragment"
+        android:label="StarredDealsFragment" >
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/addDealFragment"
+        android:name="com.example.discountme.view.fragments.AddDealFragment"
+        android:label="AddDealFragment" />
+    <fragment
+        android:id="@+id/favouriteDealsFragment"
+        android:name="com.example.discountme.view.fragments.FavouriteDealsFragment"
+        android:label="FavouriteDealsFragment" />
+    <fragment
+        android:id="@+id/myDealsFragment"
+        android:name="com.example.discountme.view.fragments.MyDealsFragment"
+        android:label="MyDealsFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.discountme.view.fragments.ProfileFragment"
+        android:label="fragment_add_deal"
+        tools:layout="@layout/fragment_add_deal" />
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.example.discountme.view.fragments.FeedFragment"
+        android:label="fragment_deals_list"
+        tools:layout="@layout/fragment_deals_list" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.discountme.view.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.discountme.view.fragments.EditProfileFragment"
+        android:label="EditProfileFragment" >
+
+        <argument
+            android:name="user"
+            app:argType="com.example.discountme.model.User" />
+
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/dealDetailsFragment"
+        android:name="com.example.discountme.view.fragments.DealDetailsFragment"
+        android:label="DealDetailsFragment">
+
+        <argument
+            android:name="deal"
+            app:argType="com.example.discountme.model.Deal" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/editDealFragment"
+        android:name="com.example.discountme.view.fragments.EditDealFragment"
+        android:label="fragment_edit_deal"
+        tools:layout="@layout/fragment_edit_deal" />
+</navigation>
