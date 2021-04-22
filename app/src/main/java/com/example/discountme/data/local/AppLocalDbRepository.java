@@ -10,7 +10,7 @@ import com.example.discountme.model.Deal;
 import com.example.discountme.utilities.Converters;
 
 
-@Database(entities = {Deal.class}, version = 1, exportSchema = false)
+@Database(entities = {Deal.class}, version = 3, exportSchema = false)
 @TypeConverters({Converters.class})
 public abstract class AppLocalDbRepository extends RoomDatabase {
     public abstract DealDao dealDao();

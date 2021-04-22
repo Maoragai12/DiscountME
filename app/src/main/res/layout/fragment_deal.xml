@@ -252,8 +252,9 @@
                 android:hint="Description..."
                 android:maxLines="5"
                 android:minLines="5"
-                android:textColorHighlight="#FFFFFF"
+                android:textColor="#FFFFFF"
 
+                android:textColorHighlight="#FFFFFF"
                 android:textColorHint="#FFFFFF"
                 android:textColorLink="#FFFFFF"
                 android:textSize="18sp" />

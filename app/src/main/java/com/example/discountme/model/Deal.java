@@ -20,7 +20,7 @@ public class Deal implements Serializable {
     public String  id;
     public String title;
     public String description;
-    public int/*String*/ type;
+    public int type;
     public String cost;
     public String imageUrl;
     public String userId;
