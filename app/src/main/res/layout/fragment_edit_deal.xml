@@ -272,6 +272,7 @@
                     android:layout_weight="1"
                     android:hint="Deal's Price..."
                     android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
                     android:textColorHighlight="#FFFFFF"
                     android:textColorHint="#FFFFFF"
                     android:textColorLink="#FFFFFF"
