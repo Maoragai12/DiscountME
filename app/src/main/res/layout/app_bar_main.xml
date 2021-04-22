@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".view.activities.HomeActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -15,7 +16,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@drawable/background"
             app:popupTheme="@style/Theme.DiscountME.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -23,7 +24,8 @@
     <include
         android:id="@+id/main_view"
         layout="@layout/content_main"
-        android:layout_height="686dp" />
+        android:layout_height="686dp"
+        android:background="@drawable/background" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

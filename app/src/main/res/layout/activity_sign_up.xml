@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAF2F2"
+    android:background="@drawable/background"
     tools:context=".view.activities.SignUpActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:background="#FAF2F2"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -29,6 +29,10 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="230dp"
             android:text="Area of Interests:"
+            android:textColor="#FFFFFF"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textColorLink="#FFFFFF"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/signup_signup_btn"
             app:layout_constraintEnd_toEndOf="@+id/signup_password_et"
@@ -46,7 +50,7 @@
             android:fontFamily="sans-serif-light"
             android:text="DiscountME"
             android:textAlignment="center"
-            android:textColor="#0B0B0B"
+            android:textColor="#FFFFFF"
             android:textSize="36sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/signup_fullname_et"
@@ -67,6 +71,10 @@
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textColorLink="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -83,6 +91,10 @@
             android:hint="Full Name"
             android:inputType="textPersonName"
             android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textColorLink="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -100,6 +112,10 @@
             android:hint="Password"
             android:inputType="textPersonName|textPassword"
             android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textColorLink="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/textView3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -112,9 +128,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="276dp"
-            android:backgroundTint="#009688"
+            android:backgroundTint="#63DA0F"
             android:text="Register"
             android:textColor="#F4F3F3"
+            android:textColorHighlight="#63DA0F"
+            android:textColorLink="#63DA0F"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.511"
             app:layout_constraintStart_toStartOf="parent"
@@ -127,7 +145,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:indeterminate="false"
-            android:progressTint="#934444"
+            android:progressTint="#63DA0F"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -140,7 +158,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
-            android:backgroundTint="#009688"
+            android:backgroundTint="#63DA0F"
             android:text="Already Member? sign in!"
             android:textColor="#F4F3F3"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -165,25 +183,29 @@
                 android:id="@+id/clothes_rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Clothes" />
+                android:text="Clothes"
+                android:textColor="#FFFFFF" />
 
             <RadioButton
                 android:id="@+id/electronics_rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Electronics" />
+                android:text="Electronics"
+                android:textColor="#FFFFFF" />
 
             <RadioButton
                 android:id="@+id/sports_rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sports" />
+                android:text="Sports"
+                android:textColor="#FFFFFF" />
 
             <RadioButton
                 android:id="@+id/food_rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Food" />
+                android:text="Food"
+                android:textColor="#FFFFFF" />
         </RadioGroup>
 
 

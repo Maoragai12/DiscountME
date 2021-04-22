@@ -3,35 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="24dp"
     tools:context=".view.fragments.SettingsFragment">
 
-<!--    <TextView-->
-<!--        android:id="@+id/textView12"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="75dp"-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView12"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="75dp"-->
 
 
-<!--        android:text="@string/action_settings"-->
-<!--        android:textAppearance="@style/TextAppearance.AppCompat.Display3"-->
-<!--        />-->
+    <!--        android:text="@string/action_settings"-->
+    <!--        android:textAppearance="@style/TextAppearance.AppCompat.Display3"-->
+    <!--        />-->
 
     <Space
         android:layout_width="wrap_content"
-        android:layout_height="40dp"/>
+        android:layout_height="40dp" />
 
     <Button
         android:layout_width="match_parent"
-        android:text="About Us"
-        android:textAllCaps="false"
-        android:textSize="26sp"
+        android:layout_height="72dp"
+        android:backgroundTint="#fff"
         android:drawableLeft="@drawable/ic_info"
         android:drawableTint="#000"
+        android:text="About Us"
+        android:textAllCaps="false"
         android:textColor="#000"
-        android:backgroundTint="#fff"
-        android:layout_height="72dp" />
+        android:textSize="26sp" />
 
     <Space
         android:layout_width="wrap_content"
@@ -39,14 +40,14 @@
 
     <Button
         android:layout_width="match_parent"
-        android:text="Term Of Service"
-        android:textAllCaps="false"
-        android:textSize="26sp"
+        android:layout_height="72dp"
+        android:backgroundTint="#fff"
         android:drawableLeft="@drawable/ic_terms"
         android:drawableTint="#000"
+        android:text="Term Of Service"
+        android:textAllCaps="false"
         android:textColor="#000"
-        android:backgroundTint="#fff"
-        android:layout_height="72dp" />
+        android:textSize="26sp" />
 
     <Space
         android:layout_width="wrap_content"
@@ -55,14 +56,14 @@
     <Button
 
         android:layout_width="match_parent"
-        android:text="Report A Problem"
-        android:textAllCaps="false"
-        android:textSize="26sp"
+        android:layout_height="72dp"
+        android:backgroundTint="#fff"
         android:drawableLeft="@drawable/ic_report"
         android:drawableTint="#000"
+        android:text="Report A Problem"
+        android:textAllCaps="false"
         android:textColor="#000"
-        android:backgroundTint="#fff"
-        android:layout_height="72dp" />
+        android:textSize="26sp" />
 
     <Space
         android:layout_width="wrap_content"
@@ -72,13 +73,13 @@
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="match_parent"
-        android:text="Logout"
-        android:textAllCaps="false"
-        android:textSize="26sp"
+        android:layout_height="72dp"
+        android:backgroundTint="#fff"
         android:drawableLeft="@drawable/ic_logout"
         android:drawableTint="#000"
+        android:text="Logout"
+        android:textAllCaps="false"
         android:textColor="#000"
-        android:backgroundTint="#fff"
-        android:layout_height="72dp" />
+        android:textSize="26sp" />
 
 </LinearLayout>

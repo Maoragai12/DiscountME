@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:paddingHorizontal="24dp"
     android:paddingVertical="4dp"
     tools:context=".view.fragments.ProfileFragment">
@@ -11,9 +12,9 @@
 
     <LinearLayout
         android:id="@+id/layout_form"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
 
         <!--        <ProgressBar-->
@@ -30,32 +31,30 @@
         <!--            app:layout_constraintTop_toBottomOf="@+id/password_profile_edit_text" />-->
 
         <LinearLayout
-            android:layout_gravity="center"
-            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/image_profile"
                 android:layout_width="160dp"
-                android:layout_height="160dp"
-                />
+                android:layout_height="160dp" />
 
             <Button
                 android:id="@+id/change_photo_button"
-                android:background="@drawable/ripple"
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:autoLink="all"
+                android:background="@drawable/ripple"
+                android:linksClickable="false"
+                android:selectAllOnFocus="false"
                 android:text="Edit Photo"
                 android:textAllCaps="false"
+                android:textColor="#FFFFFF"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#0044dd"
-                android:selectAllOnFocus="false"
-                android:linksClickable="false"
-                android:autoLink="all"
-                />
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -70,9 +69,12 @@
                 android:layout_height="wrap_content"
                 android:width="100dp"
                 android:text="@string/full_name"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
             <Space
                 android:layout_width="12dp"
@@ -84,6 +86,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Full Name..."
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
                 android:textSize="18sp" />
 
         </LinearLayout>
@@ -103,6 +109,10 @@
                 android:layout_height="wrap_content"
                 android:width="100dp"
                 android:text="@string/email"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/email_profile"
@@ -120,6 +130,10 @@
                 android:layout_weight="1"
                 android:hint="Email.."
                 android:inputType="textPersonName"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
                 android:textSize="18sp" />
 
         </LinearLayout>
@@ -138,6 +152,10 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="City:"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/email_profile"
@@ -155,6 +173,10 @@
                 android:layout_weight="1"
                 android:hint="City..."
                 android:inputType="textPersonName"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
                 android:textSize="18sp" />
 
         </LinearLayout>
@@ -172,6 +194,10 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Interest:"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/email_profile"
@@ -195,25 +221,41 @@
                     android:id="@+id/clothes_rb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Clothes" />
+                    android:text="Clothes"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textColorLink="#FFFFFF" />
 
                 <RadioButton
                     android:id="@+id/electronics_rb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Electronics" />
+                    android:text="Electronics"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textColorLink="#FFFFFF" />
 
                 <RadioButton
                     android:id="@+id/sports_rb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sports" />
+                    android:text="Sports"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textColorLink="#FFFFFF" />
 
                 <RadioButton
                     android:id="@+id/food_rb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Food" />
+                    android:text="Food"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textColorLink="#FFFFFF" />
 
             </RadioGroup>
 
@@ -225,15 +267,17 @@
 
 
     <Button
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/layout_form"
         android:id="@+id/save_button_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_form"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="28dp"
-        android:backgroundTint="#009688"
+        android:backgroundTint="#63DA0F"
         android:text="Save Chnages"
-        android:textColor="#F4F3F3"
-        />
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF" />
 
 </RelativeLayout>

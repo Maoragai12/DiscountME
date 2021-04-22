@@ -4,39 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical"
     android:padding="8dp"
     tools:context=".view.fragments.ProfileFragment">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:fontFamily="sans-serif-light"
             android:text="Add Deal"
             android:textAlignment="center"
-            android:textColor="#0B0B0B"
+            android:textColor="#FFFFFF"
             android:textSize="32sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
-<!--        <ProgressBar-->
-<!--            android:id="@+id/signup_progressBar2"-->
-<!--            style="?android:attr/progressBarStyle"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:indeterminate="false"-->
-<!--            android:progressTint="#934444"-->
-<!--            android:visibility="invisible"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.498"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/password_profile_edit_text" />-->
+        <!--        <ProgressBar-->
+        <!--            android:id="@+id/signup_progressBar2"-->
+        <!--            style="?android:attr/progressBarStyle"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:indeterminate="false"-->
+        <!--            android:progressTint="#934444"-->
+        <!--            android:visibility="invisible"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="0.498"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/password_profile_edit_text" />-->
 
 
         <LinearLayout
@@ -49,6 +49,10 @@
                 android:layout_height="wrap_content"
                 android:width="100dp"
                 android:text="Deal Name:"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/email_profile"
                 app:layout_constraintStart_toStartOf="parent"
@@ -67,6 +71,10 @@
 
                 android:hint="Deal Name..."
                 android:inputType="textPersonName"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.652"
                 app:layout_constraintStart_toEndOf="@+id/full_name_profile"
@@ -84,6 +92,10 @@
                 android:layout_height="wrap_content"
                 android:width="100dp"
                 android:text="Store:"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/email_profile"
                 app:layout_constraintStart_toStartOf="parent"
@@ -100,6 +112,10 @@
                 android:layout_weight="1"
                 android:hint="Store's Name..."
                 android:inputType="textPersonName"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.652"
                 app:layout_constraintStart_toEndOf="@+id/full_name_profile"
@@ -117,6 +133,10 @@
                 android:layout_height="wrap_content"
                 android:width="100dp"
                 android:text="City:"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/email_profile"
                 app:layout_constraintStart_toStartOf="parent"
@@ -127,18 +147,16 @@
                 android:layout_height="wrap_content" />
 
             <Spinner
-                android:spinnerMode="dropdown"
                 android:id="@+id/cities_spinner"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:spinnerMode="dropdown"
                 tools:listitem="@layout/spinner_item_layout"
 
                 />
 
         </LinearLayout>
-
-
 
 
         <LinearLayout
@@ -147,10 +165,14 @@
 
 
             <TextView
-                android:layout_marginTop="4dp"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="Interest:"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/email_profile"
                 app:layout_constraintStart_toStartOf="parent"
@@ -173,68 +195,82 @@
                     android:id="@+id/clothes_rb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Clothes" />
+                    android:text="Clothes"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textColorLink="#FFFFFF" />
 
                 <RadioButton
                     android:id="@+id/electronics_rb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Electronics" />
+                    android:text="Electronics"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textColorLink="#FFFFFF" />
 
                 <RadioButton
                     android:id="@+id/sports_rb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sports" />
+                    android:text="Sports"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textColorLink="#FFFFFF" />
 
                 <RadioButton
                     android:id="@+id/food_rb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Food" />
+                    android:text="Food"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textColorLink="#FFFFFF" />
 
             </RadioGroup>
 
         </LinearLayout>
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content">-->
 
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Branch Address:"-->
-<!--                android:textSize="18sp"-->
-<!--                app:layout_constraintBottom_toTopOf="@+id/email_profile"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Branch Address:"-->
+        <!--                android:textSize="18sp"-->
+        <!--                app:layout_constraintBottom_toTopOf="@+id/email_profile"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent" />-->
 
-<!--            <Space-->
-<!--                android:layout_width="12dp"-->
-<!--                android:layout_height="wrap_content" />-->
+        <!--            <Space-->
+        <!--                android:layout_width="12dp"-->
+        <!--                android:layout_height="wrap_content" />-->
 
-<!--            <EditText-->
-<!--                android:id="@+id/address_edit_text"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1"-->
-<!--                android:hint="Address..."-->
-<!--                android:inputType="textPersonName"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="0.652"-->
-<!--                app:layout_constraintStart_toEndOf="@+id/full_name_profile"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
+        <!--            <EditText-->
+        <!--                android:id="@+id/address_edit_text"-->
+        <!--                android:layout_width="0dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_weight="1"-->
+        <!--                android:hint="Address..."-->
+        <!--                android:inputType="textPersonName"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintHorizontal_bias="0.652"-->
+        <!--                app:layout_constraintStart_toEndOf="@+id/full_name_profile"-->
+        <!--                app:layout_constraintTop_toTopOf="parent" />-->
 
-<!--        </LinearLayout>-->
+        <!--        </LinearLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-
 
 
             <LinearLayout
@@ -247,6 +283,10 @@
                     android:layout_height="wrap_content"
                     android:width="100dp"
                     android:text="Price:"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textColorLink="#FFFFFF"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toTopOf="@+id/email_profile"
                     app:layout_constraintStart_toStartOf="parent"
@@ -263,6 +303,10 @@
                     android:layout_weight="1"
                     android:hint="Deal's Price..."
                     android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textColorLink="#FFFFFF"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.652"
                     app:layout_constraintStart_toEndOf="@+id/full_name_profile"
@@ -293,8 +337,11 @@
                 android:hint="Description..."
                 android:inputType="textMultiLine"
                 android:minLines="5"
-                app:layout_constraintEnd_toEndOf="parent"
-                 />
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent" />
 
         </LinearLayout>
 
@@ -314,8 +361,12 @@
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:backgroundTint="#009688"
-                android:text="Post Deal" />
+                android:backgroundTint="#63DA0F"
+                android:text="Post Deal"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF" />
 
             <Space
                 android:layout_width="24dp"
@@ -325,8 +376,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
-
 
 
 </ScrollView>
